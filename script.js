@@ -18,21 +18,20 @@ myForm.onsubmit = (e) => {
   let title = document.getElementById("title").value;
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
+  let radio = document.getElementsByName("inlineRadioOptions");
+  let radio1;
+  for (i = 0; i < radio.length; i++) {
+    if (radio[i].checked) {
+      radio1 = radio[i].value;
+    }
+  }
+
+  //let radio1 = document.getElementById("inlineRadio2").value;
   newBook = new Book(title, author, pages);
+  console.log(radio1);
+  //console.log(radio1);
   addBookToLibrary(newBook);
-}; 
+};
 
-
-
-// let title = document.getElementById("title").value;
-
-// myForm.onsubmit = (e) => {
-//   e.preventDefault();
-//   var title = document.getElementById("title").value;
-//   var author = document.getElementById("author").value;
-//   var pages = document.getElementById("pages").value;
-//   // var read = document.getElementById("inlineRadio1").value;
-//   // var read2 = document.getElementById("inlineRadio2").value;
-// };
 let website = document.querySelector("#website").textContent;
 console.log(website);
