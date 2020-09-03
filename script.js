@@ -28,10 +28,10 @@ myForm.onsubmit = (e) => {
 
   //let radio1 = document.getElementById("inlineRadio2").value;
   newBook = new Book(title, author, pages);
-  console.log(radio1);
-  //console.log(radio1);
   addBookToLibrary(newBook);
 };
 
-let website = document.querySelector("#website").textContent;
-console.log(website);
+document.querySelector('#modalButton').addEventListener('click', () => { document.getElementById("myForm").reset(); })
+
+
+
