@@ -10,6 +10,10 @@ function addBookToLibrary(book) {
   myLibrary.push(book);
 }
 
+function delete_book(i){
+  myLibrary.splice(i, 1);
+}
+
 let newBook;
 
 myForm.onsubmit = (e) => {
@@ -22,26 +26,30 @@ myForm.onsubmit = (e) => {
   newBook = new Book(title, author, pages, radio1);
   addBookToLibrary(newBook);
   document.getElementById("myForm").reset();
-  displayBooks(newBook);
-
+  displayBooks(myLibrary);
 };
 
 document.querySelector("#modalButton").addEventListener("click", () => {
 });
 
-function displayBooks(myLibrary) {
-    const div = document.createElement("div");
+
+function displayBooks(allbooks) {
+  let div;
+for (let i = 0; i < allbooks.length; i++)
+  {
+    div = document.createElement("div");
     div.className = "card";
     div.innerHTML = `
     <div class="card-body">
       <p class="card-text">
-     Title: ${myLibrary.title}<br>
-     Author: ${myLibrary.author}<br>
-     Pages: ${myLibrary.pages}<br>
-     Read Status: ${myLibrary.read}<br>
-     <button class="btn btn-warning">Delete Record</button>
+     Title: ${allbooks[i].title}<br>
+     Author: ${allbooks[i].author}<br>
+     Pages: ${allbooks[i].pages}<br>
+     Read Status: ${allbooks[i].read}<br>
+     <button class="btn btn-warning" onclick="delete_book(${i})">Delete Record</button>
      </p>
     </div>
   `;
+  }
     document.querySelector(".displayBooks").appendChild(div);
 }
