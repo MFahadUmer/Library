@@ -3,3 +3,7 @@
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1em;
 }
+
+.card {
+  display: none;
+}
