@@ -19,8 +19,6 @@ function addBookToLibrary(book) {
 }
 
 function toggle(index) {
-    console.log(myLibrary[index].read);
-    console.log(myLibrary[index].read.length);
   if (myLibrary[index].read === "false") {
     myLibrary[index].read = "true";
     localStorage.setItem("books", JSON.stringify(myLibrary));
@@ -67,9 +65,10 @@ function displayBooks(myLibrary) {
         Title: ${obj.title}<br>
         Author: ${obj.author}<br>
         Pages: ${obj.pages}<br>
-        Read Status:<p id="toggle"> ${obj.read} </p><button class="btn-sm btn-primary" onclick="toggle(${index})">Change status</button>
-        <br>
-        <button class="btn btn-warning" onclick="delete_book(${index})">Delete Record</button>
+        Read Status: ${obj.read} 
+        <div class="d-flex justify-content-between mt-3">
+        <button class="btn-sm btn-primary" onclick="toggle(${index})">Change status</button>
+        <button class="btn-sm btn-warning" onclick="delete_book(${index})">Delete Record</button></div>
         </div>
       </div>
     `;
