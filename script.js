@@ -15,25 +15,25 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(book) {
   myLibrary.push(book);
   localStorage.setItem('books', JSON.stringify(myLibrary));
-  window.location.reload()
+  window.location.reload();
 }
 
 function toggle(index) {
   if (myLibrary[index].read === 'false') {
     myLibrary[index].read = 'true';
     localStorage.setItem('books', JSON.stringify(myLibrary));
-    window.location.reload()
+    window.location.reload();
   } else {
     myLibrary[index].read = 'false';
     localStorage.setItem('books', JSON.stringify(myLibrary));
-    window.location.reload()
+    window.location.reload();
   }
 }
 
 function deleteBook(index) {
   myLibrary.splice(index, 1);
   localStorage.setItem('books', JSON.stringify(myLibrary));
-  window.location.reload()
+  window.location.reload();
 }
 
 let newBook;
