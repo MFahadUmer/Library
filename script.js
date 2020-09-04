@@ -18,8 +18,12 @@ function addBookToLibrary(book) {
   location.reload();
 }
 
-function delete_book(i) {
-  myLibrary.splice(i, 1);
+function toggle() {
+
+}
+
+function delete_book(index) {
+  myLibrary.splice(index, 1);
   myMovie = JSON.parse(localStorage.getItem("myMovie"));
   localStorage.setItem("books", JSON.stringify(myLibrary));
   location.reload();
@@ -44,7 +48,7 @@ document.querySelector("#modalButton").addEventListener("click", () => {});
 function displayBooks(myLibrary) {
   let div;
 
-  myLibrary.filter((obj) => {
+  myLibrary.filter((obj, index) => {
     div = document.createElement("div");
     div.className = "card";
     div.innerHTML = `
@@ -53,9 +57,9 @@ function displayBooks(myLibrary) {
         Title: ${obj.title}<br>
         Author: ${obj.author}<br>
         Pages: ${obj.pages}<br>
-        Read Status: ${obj.read} <button class="btn-sm btn-primary" onclick="delete_book(${obj})">Change status</button>
+        Read Status: ${obj.read} <button class="btn-sm btn-primary" onclick="">Change status</button>
         <br>
-        <button class="btn btn-warning" onclick="delete_book(${obj})">Delete Record</button>
+        <button class="btn btn-warning" onclick="delete_book(${index})">Delete Record</button>
         </p>
       </div>
     `;
