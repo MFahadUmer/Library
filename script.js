@@ -53,7 +53,8 @@ function displayBooks(myLibrary) {
         Title: ${obj.title}<br>
         Author: ${obj.author}<br>
         Pages: ${obj.pages}<br>
-        Read Status: ${obj.read}<br>
+        Read Status: ${obj.read} <button class="btn-sm btn-primary" onclick="delete_book(${obj})">Change status</button>
+        <br>
         <button class="btn btn-warning" onclick="delete_book(${obj})">Delete Record</button>
         </p>
       </div>
