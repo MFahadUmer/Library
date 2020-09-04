@@ -2,11 +2,11 @@
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 ![GitHub followers](https://img.shields.io/github/followers/imhilla?label=imhilla&style=social)
-![Twitter URL](https://img.shields.io/twitter/follow/hillarykiptoo_?label=Follow&style=social) [![License]
+![Twitter URL](https://img.shields.io/twitter/follow/hillarykiptoo_?label=Follow&style=social)
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
-![GitHub followers](https://img.shields.io/github/followers/MFahadUmer?label=imhilla&style=social)
-![Twitter URL](https://img.shields.io/twitter/follow/engfahadumer?label=Follow&style=social) [![License]
+![GitHub followers](https://img.shields.io/github/followers/MFahadUmer?label=mfahadumer&style=social)
+![Twitter URL](https://img.shields.io/twitter/follow/engfahadumer?label=Follow&style=social)
 
 > This is a Microverse Ruby on Rails Capstone Project
 
@@ -17,7 +17,7 @@
 Library is a small app that allows addition, deletion and changes to read status of books.
 
 This project is to demonstrate mastery of javascript functions, object constructors and Object oriented programming.
-We create function that complete particular tasks such as displaying books, toggle function that changes read status and more.
+We create functions that complete particular tasks such as displaying books, toggle function that changes read status and much more.
 
 ## Live version
 
@@ -39,11 +39,6 @@ This project was built from scratch and here's the steps taken to achieve the en
 - Added a button on each book’s display to change its read status.
 - Added localStorage thaat allows users to save data on their computer
 
-### Tests
-
-- Added tests for model and features of the app
-- 'rspec', 'capybara' and 'shoulda-matchers' gems are used for tests
-
 ## Built with
 
 - HTML
@@ -51,16 +46,6 @@ This project was built from scratch and here's the steps taken to achieve the en
 - CSS
 - JavaScript
 - Shields.io
-
-## Setup
-
-- Clone this repository
-- Open terminal
-- Change directory by using `cd groupify/`
-- Run `bundle install --without production`
-- Run `rails db:migrate`
-- Open rails server by using `rails s`
-- Open browser and go to http://localhost:3000
 
 ## Authors
 
