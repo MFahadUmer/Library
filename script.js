@@ -1,9 +1,9 @@
-let myLibrary = localStorage.getItem('books')
-? JSON.parse(localStorage.getItem('books'))
-: [];
+let myLibrary = localStorage.getItem("books")
+  ? JSON.parse(localStorage.getItem("books"))
+  : [];
 
-localStorage.setItem('books', JSON.stringify(myLibrary))
-const data = JSON.parse(localStorage.getItem('books'))
+localStorage.setItem("books", JSON.stringify(myLibrary));
+const data = JSON.parse(localStorage.getItem("books"));
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -14,13 +14,13 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
-  localStorage.setItem('books', JSON.stringify(myLibrary))
+  localStorage.setItem("books", JSON.stringify(myLibrary));
 }
 
 function delete_book(i) {
   myLibrary.splice(i, 1);
   myMovie = JSON.parse(localStorage.getItem("myMovie"));
-  localStorage.setItem("books",JSON.stringify(myLibrary));
+  localStorage.setItem("books", JSON.stringify(myLibrary));
   location.reload();
 }
 
@@ -37,28 +37,28 @@ myForm.onsubmit = (e) => {
   addBookToLibrary(newBook);
   document.getElementById("myForm").reset();
   displayBooks(myLibrary);
-  console.log(myLibrary)
 };
 
 document.querySelector("#modalButton").addEventListener("click", () => {});
 
 function displayBooks(myLibrary) {
   let div;
-  for (let i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i].title);
-    div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `
-        <div class="card-body">
-          <p class="card-text">
-         Title: ${myLibrary[i].title}<br>
-         Author: ${myLibrary[i].author}<br>
-         Pages: ${myLibrary[i].pages}<br>
-         Read Status: ${myLibrary[i].read}<br>
-         <button class="btn btn-warning" onclick="delete_book(${i})">Delete Record</button>
-         </p>
-        </div>
-      `;
+  for (let j = 0; j < myLibrary.length; j++) {
+    for (let i = 0; i < localStorage.length; i++) {
+      div = document.createElement("div");
+      div.className = "card";
+      div.innerHTML = `
+      <div class="card-body">
+        <p class="card-text">
+        Title: ${myLibrary[i].title}<br>
+        Author: ${myLibrary[i].author}<br>
+        Pages: ${myLibrary[i].pages}<br>
+        Read Status: ${myLibrary[i].read}<br>
+        <button class="btn btn-warning" onclick="delete_book(${i})">Delete Record</button>
+        </p>
+      </div>
+    `;
+    }
+    document.querySelector(".displayBooks").appendChild(div);
   }
-  document.querySelector(".displayBooks").appendChild(div);
 }
