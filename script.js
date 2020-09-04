@@ -18,8 +18,18 @@ function addBookToLibrary(book) {
   location.reload();
 }
 
-function toggle() {
-
+function toggle(index) {
+    console.log(myLibrary[index].read);
+    console.log(myLibrary[index].read.length);
+  if (myLibrary[index].read === "false") {
+    myLibrary[index].read = "true";
+    localStorage.setItem("books", JSON.stringify(myLibrary));
+    location.reload();
+  } else {
+    myLibrary[index].read = "false";
+    localStorage.setItem("books", JSON.stringify(myLibrary));
+    location.reload();
+  }
 }
 
 function delete_book(index) {
@@ -53,14 +63,14 @@ function displayBooks(myLibrary) {
     div.className = "card";
     div.innerHTML = `
       <div class="card-body">
-        <p class="card-text">
+        <div class="card-text">
         Title: ${obj.title}<br>
         Author: ${obj.author}<br>
         Pages: ${obj.pages}<br>
-        Read Status: ${obj.read} <button class="btn-sm btn-primary" onclick="">Change status</button>
+        Read Status:<p id="toggle"> ${obj.read} </p><button class="btn-sm btn-primary" onclick="toggle(${index})">Change status</button>
         <br>
         <button class="btn btn-warning" onclick="delete_book(${index})">Delete Record</button>
-        </p>
+        </div>
       </div>
     `;
     document.querySelector(".displayBooks").appendChild(div);
