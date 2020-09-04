@@ -19,6 +19,8 @@ function addBookToLibrary(book) {
 
 function delete_book(i) {
   myLibrary.splice(i, 1);
+  myMovie = JSON.parse(localStorage.getItem("myMovie"));
+  localStorage.setItem("books",JSON.stringify(myLibrary));
   location.reload();
 }
 
@@ -35,23 +37,24 @@ myForm.onsubmit = (e) => {
   addBookToLibrary(newBook);
   document.getElementById("myForm").reset();
   displayBooks(myLibrary);
+  console.log(myLibrary)
 };
 
 document.querySelector("#modalButton").addEventListener("click", () => {});
 
-function displayBooks(allbooks) {
+function displayBooks(myLibrary) {
   let div;
-  for (let i = 0; i < allbooks.length; i++) {
-    console.log(allbooks[i].title);
+  for (let i = 0; i < myLibrary.length; i++) {
+    console.log(myLibrary[i].title);
     div = document.createElement("div");
     div.className = "card";
     div.innerHTML = `
         <div class="card-body">
           <p class="card-text">
-         Title: ${allbooks[i].title}<br>
-         Author: ${allbooks[i].author}<br>
-         Pages: ${allbooks[i].pages}<br>
-         Read Status: ${allbooks[i].read}<br>
+         Title: ${myLibrary[i].title}<br>
+         Author: ${myLibrary[i].author}<br>
+         Pages: ${myLibrary[i].pages}<br>
+         Read Status: ${myLibrary[i].read}<br>
          <button class="btn btn-warning" onclick="delete_book(${i})">Delete Record</button>
          </p>
         </div>
