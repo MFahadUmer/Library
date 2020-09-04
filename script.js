@@ -1,4 +1,10 @@
-let myLibrary = [];
+let myLibrary = localStorage.getItem('books')
+? JSON.parse(localStorage.getItem('books'))
+: [];
+
+localStorage.setItem('books', JSON.stringify(myLibrary))
+const data = JSON.parse(localStorage.getItem('books'))
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -8,11 +14,12 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
+  localStorage.setItem('books', JSON.stringify(myLibrary))
 }
 
 function delete_book(i) {
   myLibrary.splice(i, 1);
-  displayBooks(myLibrary);
+  location.reload();
 }
 
 let newBook;
@@ -33,14 +40,12 @@ myForm.onsubmit = (e) => {
 document.querySelector("#modalButton").addEventListener("click", () => {});
 
 function displayBooks(allbooks) {
-  document.querySelector("#card").innerHTML = "";
-  if (allbooks.length > 0) {
-    let div;
-    for (let i = 0; i < allbooks.length; i++) {
-      console.log(allbooks[i].title);
-      div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `
+  let div;
+  for (let i = 0; i < allbooks.length; i++) {
+    console.log(allbooks[i].title);
+    div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
         <div class="card-body">
           <p class="card-text">
          Title: ${allbooks[i].title}<br>
@@ -51,7 +56,6 @@ function displayBooks(allbooks) {
          </p>
         </div>
       `;
-    }
-    document.querySelector(".displayBooks").appendChild(div);
   }
+  document.querySelector(".displayBooks").appendChild(div);
 }
