@@ -62,13 +62,14 @@ function displayBooks(myLibrary) {
     div.innerHTML = `
       <div class="card-body">
         <div class="card-text">
-        Title: ${obj.title}<br>
-        Author: ${obj.author}<br>
-        Pages: ${obj.pages}<br>
-        Read Status: ${obj.read} 
-        <div class="d-flex justify-content-between mt-3">
-        <button class="btn-sm btn-primary" onclick="toggle(${index})">Change status</button>
-        <button class="btn-sm btn-warning" onclick="delete_book(${index})">Delete Record</button></div>
+          <div class='d-flex flex-row'><p class='mr-1 font-weight-bold '>Title:</p> ${obj.title}</div><br>
+          <div class='d-flex flex-row'><p class='mr-1 font-weight-bold'>Author:</p> ${obj.author}</div><br>
+          <div class='d-flex flex-row'><p class='mr-1 font-weight-bold'>Pages:</p> ${obj.pages}</div><br>
+          <div class='d-flex flex-row'><p class='mr-1 font-weight-bold'>Read Status:</p> ${obj.read}</div> 
+          <div class="d-flex justify-content-between mt-3">
+            <button class="btn-sm btn-primary" onclick="toggle(${index})">Change status</button>
+            <button class="btn-sm btn-warning" onclick="delete_book(${index})">Delete Record</button>
+          </div>
         </div>
       </div>
     `;
