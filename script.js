@@ -15,6 +15,7 @@ function Book(title, author, pages, read) {
 function addBookToLibrary(book) {
   myLibrary.push(book);
   localStorage.setItem("books", JSON.stringify(myLibrary));
+  location.reload();
 }
 
 function delete_book(i) {
@@ -42,22 +43,21 @@ document.querySelector("#modalButton").addEventListener("click", () => {});
 
 function displayBooks(myLibrary) {
   let div;
-  for (let j = 0; j < myLibrary.length; j++) {
-    for (let i = 0; i < localStorage.length; i++) {
-      div = document.createElement("div");
-      div.className = "card";
-      div.innerHTML = `
+
+  myLibrary.filter((obj) => {
+    div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
       <div class="card-body">
         <p class="card-text">
-        Title: ${myLibrary[i].title}<br>
-        Author: ${myLibrary[i].author}<br>
-        Pages: ${myLibrary[i].pages}<br>
-        Read Status: ${myLibrary[i].read}<br>
-        <button class="btn btn-warning" onclick="delete_book(${i})">Delete Record</button>
+        Title: ${obj.title}<br>
+        Author: ${obj.author}<br>
+        Pages: ${obj.pages}<br>
+        Read Status: ${obj.read}<br>
+        <button class="btn btn-warning" onclick="delete_book(${obj})">Delete Record</button>
         </p>
       </div>
     `;
-    }
     document.querySelector(".displayBooks").appendChild(div);
-  }
+  });
 }
