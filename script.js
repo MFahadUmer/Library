@@ -36,7 +36,6 @@ myForm.onsubmit = (e) => {
   newBook = new Book(title, author, pages, radio1);
   addBookToLibrary(newBook);
   document.getElementById("myForm").reset();
-  displayBooks(myLibrary);
 };
 
 document.querySelector("#modalButton").addEventListener("click", () => {});
