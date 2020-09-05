@@ -1,9 +1,32 @@
-.displayBooks {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 1em;
+@media only screen and (min-width: 1229px) {
+  .displayBooks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+  }
 }
 
+@media only screen and (min-width: 1024px) {
+  .displayBooks {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+  }
+}
+
+@media only screen and (min-width: 634px) {
+  .displayBooks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+  }
+}
+
+@media only screen and (max-width: 634px) {
+  .logo {
+    font-size: 23px;
+  }
+}
 .card {
   width: 18rem;
 }

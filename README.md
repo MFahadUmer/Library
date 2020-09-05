@@ -21,7 +21,7 @@ We create functions that complete particular tasks such as displaying books, tog
 
 ## Live version
 
-Heres a live <a href="https://raw.githack.com/MFahadUmer/Library/feature/index.html">link</a>
+Heres a live <a href="https://raw.githack.com/MFahadUmer/Library/master/index.html">link</a>
 
 ## Features
 
