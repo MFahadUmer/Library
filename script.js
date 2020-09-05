@@ -37,7 +37,7 @@ function deleteBook(index) { // eslint-disable-line no-unused-vars
 }
 
 let newBook;
-
+/* eslint-disable */
 myForm.onsubmit = (e) => {
   e.preventDefault();
   const title = document.getElementById('title').value;
@@ -75,3 +75,4 @@ function displayBooks(myLibrary) { // eslint-disable-line no-unused-vars
     document.querySelector('.displayBooks').appendChild(div);
   });
 }
+/* eslint-enable */
