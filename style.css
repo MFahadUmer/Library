@@ -1,0 +1,13 @@
+.displayBooks {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+}
+
+.card {
+  width: 18rem;
+}
+
+.card-text {
+  line-height: 0.5em;
+}
