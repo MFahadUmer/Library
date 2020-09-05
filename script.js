@@ -18,7 +18,7 @@ function addBookToLibrary(book) {
   window.location.reload();
 }
 
-function toggle(index) {
+function toggle(index) { // eslint-disable-line no-unused-vars
   if (myLibrary[index].read === 'false') {
     myLibrary[index].read = 'true';
     localStorage.setItem('books', JSON.stringify(myLibrary));
@@ -30,7 +30,7 @@ function toggle(index) {
   }
 }
 
-function deleteBook(index) {
+function deleteBook(index) { // eslint-disable-line no-unused-vars
   myLibrary.splice(index, 1);
   localStorage.setItem('books', JSON.stringify(myLibrary));
   window.location.reload();
@@ -52,7 +52,7 @@ myForm.onsubmit = (e) => {
 
 document.querySelector('#modalButton').addEventListener('click', () => {});
 
-function displayBooks(myLibrary) {
+function displayBooks(myLibrary) { // eslint-disable-line no-unused-vars
   let div;
 
   myLibrary.filter((obj, index) => {
